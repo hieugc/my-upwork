@@ -103,3 +103,25 @@ button,a{outline-offset:4px}
 @media(prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important;transition:none!important}
 }
+
+
+/* Product-specific interactive portfolio demos */
+.interactive-panel{padding:92px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.interactive-copy h2{font-size:clamp(38px,4vw,58px);line-height:1;letter-spacing:-.05em;margin:0 0 18px}
+.interactive-copy>p:last-child{max-width:450px;line-height:1.6;color:color-mix(in srgb,var(--text) 62%,transparent)}
+.control-card{border:1px solid color-mix(in srgb,var(--text) 14%,transparent);border-radius:28px;padding:26px;background:color-mix(in srgb,var(--surface) 92%,var(--text) 8%);min-height:360px}
+.control-card>strong{font-size:58px;letter-spacing:-.055em;display:block;margin:56px 0 2px}.control-card>span{font-size:13px;color:color-mix(in srgb,var(--text) 58%,transparent)}
+.segmented{display:flex;gap:8px;flex-wrap:wrap}.segmented button,.watch-button{border:1px solid color-mix(in srgb,var(--text) 18%,transparent);background:transparent;color:inherit;border-radius:999px;padding:10px 14px;font:inherit;font-size:12px;font-weight:750;cursor:pointer}.segmented button.active,.watch-button.watching{background:var(--text);color:var(--surface)}
+.sparkline{display:grid;grid-template-columns:repeat(6,1fr);align-items:end;gap:7px;height:115px;margin-top:42px}.sparkline i{display:block;background:var(--accent);border-radius:8px 8px 2px 2px}.sparkline i:nth-child(1){height:25%}.sparkline i:nth-child(2){height:44%}.sparkline i:nth-child(3){height:36%}.sparkline i:nth-child(4){height:68%}.sparkline i:nth-child(5){height:58%}.sparkline i:nth-child(6){height:92%}
+.workflow-list{display:grid;gap:8px;margin-bottom:22px}.workflow-list button,.menu-demo button{display:flex;align-items:center;gap:14px;border:1px solid color-mix(in srgb,var(--text) 14%,transparent);background:transparent;color:inherit;border-radius:14px;padding:14px;text-align:left;font:inherit;cursor:pointer}.workflow-list button span{font-size:11px;opacity:.55}.workflow-list button.active-row{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.action-button{border:0;background:var(--text);color:var(--surface);border-radius:999px;padding:13px 17px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.status-line{min-height:1.4em;font-size:12px;margin:14px 0 0;opacity:.68}
+.listing-demo,.product-demo{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center;margin:26px 0}.listing-image{height:125px;border-radius:18px;background:linear-gradient(145deg,#cbb692,#8d7352)}.listing-demo h3,.product-demo h3{font-size:24px;margin:7px 0}.listing-demo small,.product-demo small{opacity:.6}
+.menu-demo{display:grid;gap:8px;margin:22px 0}.menu-demo button span{flex:1}.menu-demo button em{font-style:normal;font-size:18px}.cart-line{display:flex;justify-content:space-between;border-top:1px solid color-mix(in srgb,var(--text) 16%,transparent);padding:16px 0 20px}
+.product-object{height:150px;border-radius:48% 48% 32% 32%;background:#8c5a46;box-shadow:inset -14px -10px 30px rgba(0,0,0,.16)}.product-object.variant-1{background:#6b6965}.product-object.variant-2{background:#c9b599}
+.project-canvas{display:grid;grid-template-columns:1.1fr .9fr;gap:8px;margin-top:24px}.project-canvas article{min-height:120px;background:var(--text);color:var(--surface);padding:16px;display:flex;flex-direction:column;justify-content:space-between}.project-canvas article:first-child{grid-row:span 2;min-height:248px}.project-canvas span{font-size:10px;opacity:.6}.project-canvas strong{font-size:22px}
+.ledger-control{background:#0e1a18;border-color:#263a34}.trade-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px}.trade-head strong{font-size:28px}.trade-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:60px}.trade-grid button{border:1px solid #355047;background:#14241f;color:#e9f4ef;border-radius:14px;padding:18px;font-weight:800;cursor:pointer}.trade-grid button:first-child{color:#43e6a0}.trade-grid button:last-child{color:#ff8a8a}
+
+button:focus-visible,a:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 80%,#fff);outline-offset:3px}
+
+@media(max-width:900px){.interactive-panel{grid-template-columns:1fr;gap:28px}}
+@media(max-width:620px){.interactive-panel{padding:64px 0}.control-card{padding:18px;min-height:0}.control-card>strong{font-size:48px;margin-top:40px}.listing-demo,.product-demo{grid-template-columns:95px 1fr}.project-canvas{grid-template-columns:1fr}.project-canvas article:first-child{grid-row:auto;min-height:150px}.trade-grid{margin-top:38px}}

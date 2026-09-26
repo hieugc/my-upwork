@@ -68,3 +68,11 @@ Tạo mới một static-export Next.js portfolio hub với 8 demo websites: Cha
 
 ### Ảnh hưởng
 Giữ single-app static-export architecture hiện có. Tám sản phẩm là tám differentiated route experiences trong một portfolio deployable artifact; tránh duplicate dependencies và vẫn bảo toàn visual identity từng sản phẩm. Chỉ sửa các quality gap tìm thấy bằng lint/typecheck/test/build/browser verification.
+
+
+## Product interaction completion — cập nhật 2026-09-26
+Files: components/ProductExperience.tsx, app/globals.css
+Bảng DB: Không có
+Ảnh hưởng: Bổ sung interaction demo theo backlog cho cả 8 sản phẩm: campaign/revenue lens, workflow simulator, property filter, cafe cart + booking state, ecommerce variant + cart, studio project filter, treasury watchlist/trade simulation. Mọi trạng thái chỉ chạy local; không gửi payment/trade/PII ra ngoài.
+Verification: pnpm lint pass; pnpm typecheck pass; 4/4 node tests pass; next build static export pass; Playwright browser smoke xác nhận state thay đổi và không có current-page console error.
+

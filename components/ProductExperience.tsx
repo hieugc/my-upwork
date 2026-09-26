@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo, useState } from "react";
 
 type Product = {
   slug: string;
@@ -50,6 +51,61 @@ const subheads: Record<string,string> = {
   ledger: "Treasury & portfolio operations",
 };
 
+function InteractiveShowcase({ tone }: { tone: string }) {
+  const [index, setIndex] = useState(0);
+  const [cart, setCart] = useState(0);
+  const [status, setStatus] = useState("Ready");
+  const [watching, setWatching] = useState(false);
+  const [category, setCategory] = useState("Coffee");
+
+  const content = useMemo(() => {
+    if (tone === "chain") return [
+      { label: "Launch", value: "+184%", note: "community growth" },
+      { label: "Acquire", value: "−31.8%", note: "CAC improvement" },
+      { label: "Retain", value: "68%", note: "30-day activation" },
+    ];
+    if (tone === "metric") return [
+      { label: "Pipeline", value: "$3.84M", note: "+18.6% vs prior period" },
+      { label: "Retention", value: "94.2%", note: "gross revenue retention" },
+      { label: "Expansion", value: "$720K", note: "expansion pipeline" },
+    ];
+    return [];
+  }, [tone]);
+
+  if (tone === "chain" || tone === "metric") {
+    const active = content[index];
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Interactive demo</p><h2>{tone === "chain" ? "Switch the growth lens." : "Change the revenue lens."}</h2><p>Use the controls to preview how the interface changes context without leaving the page.</p></div><div className="control-card"><div className="segmented">{content.map((item,i)=><button key={item.label} className={i===index?"active":""} onClick={()=>setIndex(i)}>{item.label}</button>)}</div><strong>{active.value}</strong><span>{active.note}</span><div className="sparkline" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div></div></section>;
+  }
+
+  if (tone === "orbit") {
+    const steps=["Intake","Classify","Human check","Ship"];
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Workflow simulator</p><h2>Run a safe automation loop.</h2><p>The demo never calls an external API. It only demonstrates state progression.</p></div><div className="control-card"><div className="workflow-list">{steps.map((step,i)=><button key={step} onClick={()=>{setIndex(i);setStatus(step+" selected")}} className={index===i?"active-row":""}><span>{String(i+1).padStart(2,"0")}</span>{step}</button>)}</div><button className="action-button" onClick={()=>setStatus("Demo workflow completed")}>Run demo workflow</button><p className="status-line" role="status">{status}</p></div></section>;
+  }
+
+  if (tone === "maison") {
+    const cities=["Paris","London","Singapore"];
+    const homes=[["Île Saint-Louis","€4.8M"],["Belgravia","£6.2M"],["Nassim Road","S$12.4M"]];
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Property finder</p><h2>Filter a private collection.</h2><p>A compact listing interaction for a luxury property brief.</p></div><div className="control-card"><div className="segmented">{cities.map((city,i)=><button key={city} className={i===index?"active":""} onClick={()=>setIndex(i)}>{city}</button>)}</div><div className="listing-demo"><div className="listing-image"/><div><small>{cities[index]}</small><h3>{homes[index][0]}</h3><strong>{homes[index][1]}</strong></div></div><button className="action-button" onClick={()=>setStatus("Viewing request prepared")}>Request private viewing</button><p className="status-line" role="status">{status}</p></div></section>;
+  }
+
+  if (tone === "noma") {
+    const items=[["Filter coffee",65],["Cardamom bun",48],["Egg sandwich",95]] as const;
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Order & booking demo</p><h2>Build a morning order.</h2><p>Cart and booking are local demo states; no payment or personal data is sent.</p></div><div className="control-card"><div className="segmented">{["Coffee","Bakery","Breakfast"].map(x=><button key={x} className={category===x?"active":""} onClick={()=>setCategory(x)}>{x}</button>)}</div><div className="menu-demo">{items.map(([name,price])=><button key={name} onClick={()=>setCart(v=>v+price)}><span>{name}</span><b>{price}k</b><em>+</em></button>)}</div><div className="cart-line"><span>Demo cart</span><strong>{cart}k</strong></div><button className="action-button" onClick={()=>setStatus("Table request saved locally")}>Book a table</button><p className="status-line" role="status">{status}</p></div></section>;
+  }
+
+  if (tone === "aura") {
+    const colors=["Clay","Ash","Sand"];
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Commerce demo</p><h2>Choose a finish, add to bag.</h2><p>A product-detail interaction with variant and cart state.</p></div><div className="control-card"><div className="product-demo"><div className={"product-object variant-"+index}/><div><small>Hand-thrown vessel</small><h3>Arc No. 04</h3><strong>$148</strong></div></div><div className="segmented">{colors.map((x,i)=><button key={x} className={index===i?"active":""} onClick={()=>setIndex(i)}>{x}</button>)}</div><button className="action-button" onClick={()=>setCart(v=>v+1)}>Add to bag · {cart} item{cart===1?"":"s"}</button></div></section>;
+  }
+
+  if (tone === "northstar") {
+    const filters=["All","Identity","Product","Campaign"];
+    return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Project canvas</p><h2>Filter work by discipline.</h2><p>The project canvas responds immediately to the selected creative discipline.</p></div><div className="control-card"><div className="segmented">{filters.map((x,i)=><button key={x} className={index===i?"active":""} onClick={()=>setIndex(i)}>{x}</button>)}</div><div className="project-canvas"><article><span>01</span><strong>{filters[index]} System</strong></article><article><span>02</span><strong>{index===0?"Digital Product":"Selected "+filters[index]}</strong></article><article><span>03</span><strong>Launch Toolkit</strong></article></div></div></section>;
+  }
+
+  return <section className="interactive-panel shell"><div className="interactive-copy"><p className="demo-kicker">Simulation only</p><h2>Inspect a treasury position.</h2><p>Watchlist and trade controls are intentionally non-executing portfolio interactions.</p></div><div className="control-card ledger-control"><div className="trade-head"><span>BTC / USD</span><strong>$102,480</strong></div><button className={"watch-button "+(watching?"watching":"")} onClick={()=>setWatching(v=>!v)}>{watching?"★ Watching":"☆ Add to watchlist"}</button><div className="trade-grid"><button onClick={()=>setStatus("BUY simulation prepared")}>Simulate buy</button><button onClick={()=>setStatus("SELL simulation prepared")}>Simulate sell</button></div><p className="status-line" role="status">{status}</p></div></section>;
+}
+
 const sectionTitles: Record<string,string> = {
   chain: "A growth stack built around real adoption.",
   orbit: "Automation should feel boringly reliable.",
@@ -83,6 +139,8 @@ export default function ProductExperience({ product }: { product: Product }) {
       <section className="sector-strip">
         <div className="shell">{product.services.map((item)=><span key={item}>{item}</span>)}</div>
       </section>
+
+      <InteractiveShowcase tone={product.tone} />
 
       <section id="work" className="demo-section shell">
         <div className="section-heading"><p className="demo-kicker">Selected capabilities</p><h2>{sectionTitles[product.tone]}</h2></div>
