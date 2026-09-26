@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ChainPulse — Crypto Growth Agency</title>
+<style>
+:root{
+  --ink:#0b1020;--paper:#f5f7fb;--card:#ffffff;--muted:#667085;
+  --lime:#d9ff66;--violet:#6d5dfc;--line:#dfe3ea;--navy:#141b34;
+  --radius:28px;--shadow:0 28px 70px rgba(11,16,32,.12);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink)}
+a{text-decoration:none;color:inherit}button,a{outline-offset:4px}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}.mark{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 120deg,var(--lime),var(--violet),#2bd4bd,var(--lime));box-shadow:inset 0 0 0 8px var(--ink)}.navlinks{display:flex;gap:30px;color:#31384a;font-size:14px}.navcta{padding:12px 18px;border-radius:999px;background:var(--ink);color:white;font-size:14px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:68px 0 76px}.eyebrow{display:inline-flex;gap:10px;align-items:center;background:#e9edf5;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--violet)}
+h1{font-size:clamp(54px,7vw,96px);line-height:.93;letter-spacing:-.065em;margin:22px 0 24px;max-width:820px}.accent{display:inline-block;position:relative}.accent:after{content:"";position:absolute;left:0;right:0;bottom:4px;height:14px;background:var(--lime);z-index:-1;transform:rotate(-1deg)}
+.lede{font-size:19px;line-height:1.6;color:#4c556b;max-width:660px}.actions{display:flex;gap:14px;margin-top:34px}.btn{padding:15px 22px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid var(--line)}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.secondary{background:white}
+.trust{display:flex;gap:28px;margin-top:42px;color:#71798c;font-size:13px}.trust strong{color:var(--ink)}
+.orbit{position:relative;min-height:520px}.core{position:absolute;inset:86px 42px 70px 42px;border-radius:42px;background:linear-gradient(145deg,#0d1326,#1f2b52);box-shadow:var(--shadow);overflow:hidden;padding:28px;color:white}.core:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,var(--violet),transparent 66%);filter:blur(8px);opacity:.42;right:-90px;top:-90px}.mini-head{display:flex;justify-content:space-between;font-size:12px;color:#aab4cf}.metric{font-size:58px;font-weight:800;letter-spacing:-.06em;margin-top:48px}.metric-label{font-size:14px;color:#aab4cf}.bars{display:grid;grid-template-columns:repeat(8,1fr);align-items:end;gap:8px;height:150px;margin-top:36px}.bar{background:linear-gradient(var(--lime),#9fdc3f);border-radius:10px 10px 3px 3px}.bar:nth-child(1){height:25%}.bar:nth-child(2){height:42%}.bar:nth-child(3){height:35%}.bar:nth-child(4){height:58%}.bar:nth-child(5){height:72%}.bar:nth-child(6){height:63%}.bar:nth-child(7){height:84%}.bar:nth-child(8){height:100%}.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:0 18px 50px rgba(11,16,32,.12)}.f1{top:30px;right:0}.f2{bottom:18px;left:0}.tiny{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.big{font-weight:800;font-size:26px;margin-top:5px}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden}.marquee-track{display:flex;justify-content:space-between;gap:42px;white-space:nowrap;font-size:13px;font-weight:800;color:#60697c;text-transform:uppercase;letter-spacing:.12em}
+.section{padding:112px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;color:var(--violet)}h2{font-size:clamp(38px,5vw,66px);letter-spacing:-.055em;line-height:.98;margin:10px 0 0;max-width:760px}.section-head p{max-width:360px;color:var(--muted);line-height:1.55}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(11,16,32,.08)}.service-index{font-size:12px;color:var(--muted)}.service h3{font-size:25px;letter-spacing:-.03em;margin:0 0 10px}.service p{color:var(--muted);line-height:1.55;margin:0}.arrow{font-size:22px}
+.case{background:var(--navy);color:white;border-radius:36px;padding:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;overflow:hidden}.case-copy{padding:24px}.case-tag{color:var(--lime);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.case h3{font-size:48px;letter-spacing:-.05em;margin:18px 0}.case p{color:#bac2d8;line-height:1.6}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.stat{border-top:1px solid #384361;padding-top:16px}.stat strong{font-size:28px}.stat span{display:block;color:#9fa9c3;font-size:12px;margin-top:5px}.case-art{position:relative;background:linear-gradient(145deg,#7f6dff,#3f49aa);border-radius:28px;min-height:390px;overflow:hidden}.coin{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.45);box-shadow:inset 0 0 0 18px rgba(255,255,255,.08)}.coin.c1{width:220px;height:220px;right:-45px;top:30px}.coin.c2{width:120px;height:120px;left:36px;bottom:42px}.chartline{position:absolute;left:40px;right:40px;bottom:90px;height:130px;border-left:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}.chartline svg{width:100%;height:100%}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:24px 0;border-top:2px solid var(--ink)}.step small{color:var(--muted)}.step h4{font-size:20px;margin:24px 0 10px}.step p{color:var(--muted);line-height:1.5;font-size:14px}
+.cta{margin-bottom:50px;background:var(--lime);border-radius:38px;padding:66px;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{margin:0;max-width:650px}.cta .btn{background:var(--ink);color:white;border-color:var(--ink);white-space:nowrap}
+footer{padding:28px 0 44px;color:#727b8f;font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:34px}.orbit{min-height:450px}.services{grid-template-columns:1fr 1fr}.case{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.section-head{align-items:start;flex-direction:column}.cta{padding:38px;align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.hero{gap:22px;padding:28px 0 48px}h1{font-size:52px}.lede{font-size:17px}.actions{flex-direction:column}.btn{text-align:center}.trust{gap:12px;flex-wrap:wrap}.orbit{min-height:390px}.core{inset:62px 8px 48px 8px}.f1{right:8px}.f2{left:8px}.services,.process{grid-template-columns:1fr}.section{padding:78px 0}.case{padding:18px}.case-copy{padding:14px}.case h3{font-size:38px}.stats{grid-template-columns:1fr}.cta{border-radius:28px;padding:28px}.marquee-track{justify-content:flex-start}footer{gap:12px;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#"><span class="mark"></span><span>ChainPulse</span></a>
+  <nav class="navlinks" aria-label="Primary"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#insights">Insights</a></nav>
+  <a class="navcta" href="#contact">Book a strategy call ↗</a>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <div class="eyebrow">Crypto growth, without the hype</div>
+    <h1>We turn Web3 products into <span class="accent">market momentum.</span></h1>
+    <p class="lede">Strategy, content, paid acquisition and community systems for crypto teams that need measurable growth—not vanity metrics.</p>
+    <div class="actions"><a class="btn primary" href="#contact">Plan your launch</a><a class="btn secondary" href="#work">See campaign results</a></div>
+    <div class="trust"><span><strong>38</strong> launches supported</span><span><strong>$12.4M</strong> tracked volume</span><span><strong>17</strong> markets</span></div>
+  </div>
+  <div class="orbit" aria-label="Campaign analytics preview">
+    <div class="core">
+      <div class="mini-head"><span>Campaign velocity</span><span>Last 30 days</span></div>
+      <div class="metric">+184%</div><div class="metric-label">Qualified community growth</div>
+      <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    </div>
+    <div class="float f1"><div class="tiny">CAC improvement</div><div class="big">−31.8%</div></div>
+    <div class="float f2"><div class="tiny">Wallet activations</div><div class="big">24,960</div></div>
+  </div>
+</section>
+
+<div class="marquee"><div class="wrap marquee-track"><span>DeFi</span><span>Wallets</span><span>Infrastructure</span><span>L2</span><span>Gaming</span><span>Analytics</span><span>Stablecoins</span></div></div>
+
+<section id="services" class="wrap section">
+  <div class="section-head"><div><div class="kicker">What we operate</div><h2>A growth stack built around real adoption.</h2></div><p>Modular services for launch, scale and retention. Each engagement starts with one measurable business objective.</p></div>
+  <div class="services">
+    <article class="service"><span class="service-index">01 / Strategy</span><div><h3>Launch architecture</h3><p>Positioning, audience, channel plan, campaign narrative and market-entry sequencing.</p></div><span class="arrow">↗</span></article>
+    <article class="service"><span class="service-index">02 / Acquisition</span><div><h3>Paid growth</h3><p>Full-funnel campaigns with wallet-aware attribution and disciplined creative testing.</p></div><span class="arrow">↗</span></article>
+    <article class="service"><span class="service-index">03 / Community</span><div><h3>Community engine</h3><p>Content rhythms, ambassador loops, onboarding systems and retention mechanics.</p></div><span class="arrow">↗</span></article>
+  </div>
+</section>
+
+<section id="work" class="wrap section" style="padding-top:0">
+  <div class="case">
+    <div class="case-copy">
+      <div class="case-tag">Featured case · Wallet infrastructure</div>
+      <h3>From technical product to category story.</h3>
+      <p>We reframed a developer-first wallet SDK around one adoption narrative, rebuilt the campaign funnel and coordinated content, media and community across four markets.</p>
+      <div class="stats"><div class="stat"><strong>3.6×</strong><span>qualified demos</span></div><div class="stat"><strong>−28%</strong><span>cost per lead</span></div><div class="stat"><strong>11 wks</strong><span>to target pipeline</span></div></div>
+    </div>
+    <div class="case-art">
+      <div class="coin c1"></div><div class="coin c2"></div>
+      <div class="chartline"><svg viewBox="0 0 300 120" fill="none"><path d="M0 103 C38 90,53 94,79 70 S124 58,146 72 S198 65,217 34 S263 40,300 8" stroke="#D9FF66" stroke-width="4" stroke-linecap="round"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="wrap section" style="padding-top:20px">
+  <div class="section-head"><div><div class="kicker">Operating model</div><h2>Four moves. One accountable growth loop.</h2></div></div>
+  <div class="process">
+    <div class="step"><small>01</small><h4>Diagnose</h4><p>Audit product, market, funnel and existing signal.</p></div>
+    <div class="step"><small>02</small><h4>Frame</h4><p>Define narrative, ICP, channel thesis and targets.</p></div>
+    <div class="step"><small>03</small><h4>Operate</h4><p>Ship campaigns weekly with transparent experiment logs.</p></div>
+    <div class="step"><small>04</small><h4>Compound</h4><p>Scale proven loops and retire low-signal activity.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="cta"><h2>Have a launch, product or market that needs traction?</h2><a class="btn" href="mailto:hello@chainpulse.example">Start with a 30-minute brief ↗</a></div>
+</section>
+</main>
+
+<footer class="wrap"><span>© 2026 ChainPulse — concept portfolio piece.</span><span>Strategy · Creative · Growth</span></footer>
+</body>
+</html>
