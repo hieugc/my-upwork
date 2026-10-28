@@ -4,3 +4,11 @@ node_modules/
 .DS_Store
 .env*
 !.env.example
+.next-*/
+.runtime/
+._*
+**/._*
+*.tsbuildinfo
+artifacts/
+playwright-report/
+test-results/
