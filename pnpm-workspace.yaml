@@ -1,0 +1,4 @@
+# Explicit least-privilege permission for the native resolver installed by Next/ESLint.
+# pnpm 11 requires decisions for dependency build scripts during frozen installs.
+allowBuilds:
+  'unrs-resolver@1.12.2': true
