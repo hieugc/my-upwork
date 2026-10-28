@@ -1,0 +1,48 @@
+/* Task Control readability and execution observability refresh */
+.page{background:#0c1422}
+.main{padding:30px clamp(18px,3vw,48px) 60px;max-width:1800px;width:100%}
+.header{margin-bottom:26px}.header h1{font-size:clamp(27px,2.5vw,36px);letter-spacing:-.045em}
+.header>div>p:first-child{font-size:12px;color:#97a8bf}
+.headerHint{font-size:13px!important;color:#8e9eb2!important;margin-top:9px!important;line-height:1.45}
+.queueSummary{gap:15px}.queueSummary>div{padding:21px;border-radius:16px;background:#141f30}
+.queueSummary span{font-size:11px}.queueSummary small{font-size:12px}.queueSummary strong{font-size:34px}
+.queueSection{border-radius:16px;background:#141e2d;border-color:#2a384c}
+.queueTitle{padding:20px 24px}.queueTitle span{font-size:11px}.queueTitle h2{font-size:20px}.queueTitle p{font-size:12px;max-width:720px}
+.queueEmpty{font-size:13px}.liveIndicator{font-size:11px!important}
+.executionCard{padding:19px 22px;border-radius:12px}.executionTop h3{font-size:17px}
+.executionMeta,.queueFootnote,.runRow small,.attentionRow small,.waitingRow small{font-size:12px}
+.runRow strong,.attentionRow strong,.waitingRow strong{font-size:14px}
+.tableWrap table{font-size:12px}.tableWrap th{font-size:11px}.tableWrap td,.tableWrap th{padding:14px 16px}
+.projectCards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.projectCard{padding:20px;border-radius:16px}.projectCard h3{font-size:18px}.projectCard p{font-size:12px;min-height:0}
+.projectCard dt{font-size:10px}.projectCard dd{font-size:11px;overflow-wrap:anywhere}
+.projectCardHead>span{font-size:10px}
+.projectCard dl{gap:14px}
+.modalTaskNav b,.modalTaskNav small,.modalTaskTitle>span,.taskTabs button{font-size:11px}
+.modalTaskTitle h3{font-size:17px}.modalTaskDetail{font-size:13px}
+.taskDetailGrid b{font-size:10px}.taskDetailGrid span{font-size:12px}
+.taskTabs button{padding:10px 13px}
+.queueLink,.iconButton{transition:background .18s,border-color .18s}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #8baaff;outline-offset:3px}
+.coverageStrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:18px 20px}
+.coverageStrip>strong{border:1px solid #324157;background:#101a2a;border-radius:11px;padding:16px;font-size:25px;font-variant-numeric:tabular-nums}
+.coverageStrip small{display:block;margin-top:5px;font-size:11px;font-weight:500;color:#94a5ba}
+.coverageList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;padding:0 20px 18px}
+.coverageList>div{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #26344a;padding:12px 0;font-size:12px;min-width:0}
+.coverageList>div>span:first-child{font-weight:650;color:#dbe5f2;overflow-wrap:anywhere}
+.hasEvents{font-size:11px;color:#6ee2bc;white-space:nowrap}
+.noEvents{font-size:11px;color:#dfb77b;white-space:nowrap}
+.logFilter{display:flex;align-items:center;gap:10px;font-size:12px;color:#9eafc5}
+.logFilter select{background:#0f192a;color:#edf4ff;border:1px solid #364864;border-radius:9px;padding:10px 12px;font:inherit;max-width:240px}
+.logList{max-height:580px;overflow-y:auto}
+.logEvent{padding:14px 22px;border-bottom:1px solid #26344a}
+.logEvent:last-child{border-bottom:0}
+.logEvent>div{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logEvent>div>span:first-child{border-radius:8px;font-size:10px;font-weight:800;padding:5px 8px}
+.logEvent strong{font-size:13px;overflow-wrap:anywhere}.logEvent strong span{color:#8799b0;font-weight:500}
+.logEvent time{margin-left:auto;color:#7d91a9;font-size:11px}
+.logEvent p{font-size:12px;margin:8px 0 5px;color:#d5dfed;overflow-wrap:anywhere}
+.logEvent small{font-size:11px;color:#8698b0;overflow-wrap:anywhere}
+@media(max-width:1100px){.projectCards,.coverageList{grid-template-columns:1fr}}
+@media(max-width:720px){.main{padding:20px 14px 40px}.queueSummary{grid-template-columns:repeat(2,minmax(0,1fr))}.coverageStrip{grid-template-columns:1fr 1fr}.queueTitle{padding:16px}.logFilter{width:100%;justify-content:space-between}.logFilter select{max-width:180px}.queueSummary>div{padding:14px}.queueSummary strong{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.projectCard,.queueLink,.iconButton{transition:none}}
